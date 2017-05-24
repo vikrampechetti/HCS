@@ -8,11 +8,10 @@ import org.aeonbits.owner.ConfigFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.HCS.ioc.api.config.APIConfig;
+import com.HCS.ioc.api.Common.APIConfig;
 import com.HCS.ioc.disable.ssl.DisableSSL;
-
 /**
- * @author BALA CHANDER Apr 18, 2017 
+ * @author OohithVikramRao 19-May-2017
  *
  */
 public class Authentication {

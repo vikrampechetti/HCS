@@ -18,7 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author BALA CHANDER Aug 11, 2016 
+ * @Author OohithVikramRao 19-May-2017 
  *
  */
 public class DisableSSL {

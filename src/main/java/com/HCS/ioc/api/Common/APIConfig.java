@@ -3,6 +3,11 @@ package com.HCS.ioc.api.Common;
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;
 
+/**
+ * @author OohithVikramRao 23-May-2017
+ *
+ */
+
 @Sources({"file:C:\\hcs\\HCSAPIConfig.properties",
 		"classpath:HCSAPIConfig.properties",
 		})
@@ -31,6 +36,8 @@ public interface APIConfig  extends Config {
 	 *****************************************/
 	String cameraDataXLSFileAbsPath();
 	String camerasDataSourceID();
+	
+
 	
 }
 

@@ -1,4 +1,4 @@
-package com.HCS.ioc.DB2Access;
+package com.HCS.ioc.DataBase.DB2Access;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -31,8 +31,10 @@ public class FetchCameraIDFromDatabase {
 			JSONObject payloadjs = new JSONObject(dataSourcePayload);
 			String cameraIDinCSV = payloadjs.getString("camera_ID").toString();
 			while (resultset.next()) {
-				String CameraIDinDB = resultset.getString(30);
-				String ObjectID = resultset.getString(1);
+				String CameraIDinDB = resultset.getString("camera_ID");
+				System.out.println(CameraIDinDB);
+				String ObjectID = resultset.getString("OBJECTID");
+				System.out.println(ObjectID);
 				if (cameraIDinCSV.equalsIgnoreCase(CameraIDinDB)) {
 					new UpdateDataSourceRecord();
 					logger.info(UpdateDataSourceRecord.updateDataSource(ObjectID, dataSourcePayload));

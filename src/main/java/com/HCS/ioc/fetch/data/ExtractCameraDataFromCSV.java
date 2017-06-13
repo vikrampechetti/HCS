@@ -1,5 +1,5 @@
 
-package com.HCS.ioc.fetch.camera.data;
+package com.HCS.ioc.fetch.data;
 
 import java.io.BufferedReader;
 
@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.HCS.ioc.DB2Access.FetchCameraIDFromDatabase;
+import com.HCS.ioc.DataBase.DB2Access.FetchCameraIDFromDatabase;
 import com.HCS.ioc.api.Common.APIConfig;
 import com.HCS.ioc.api.Common.Utilities;
 

@@ -57,7 +57,7 @@ public class Utilities {
 	 * To Execute Select Query
 	 */
 	public static PreparedStatement ExecuteSelectQuery(String SelectQuery) {
-		Connection connection = Utilities.GetDataBaseConnection();
+		Connection connection = Utilities.GetDB2Connection();
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = connection.prepareStatement(SelectQuery);
@@ -71,7 +71,7 @@ public class Utilities {
 	/**
 	 * To get DataBase Connection
 	 */
-	private static Connection GetDataBaseConnection() {
+	private static Connection GetDB2Connection() {
 		Connection con = null;
 		try {
 			Class.forName("com.ibm.db2.jcc.DB2Driver");

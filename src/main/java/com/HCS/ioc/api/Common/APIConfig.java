@@ -12,9 +12,16 @@ import org.aeonbits.owner.Config.Sources;
 		"classpath:HCSAPIConfig.properties",
 		})
 public interface APIConfig  extends Config {	
+	/****************************************
+	 *	IBM IOC access Credentials
+	 ****************************************/
 	String host();
 	String host_1();
 	String port();
+	
+	/****************************************
+	 *	IBM-Session-ID, Value
+	 ****************************************/
 	String sessionName();
 	String sessionValue();
 	
@@ -25,9 +32,9 @@ public interface APIConfig  extends Config {
 	String DB2Usersecret();
 	String DB2ConnectionURL();
 	
-	/****************************************
+	/*****************************************
 	 *  IBM IOC Console 
-	 ****************************************/
+	 *****************************************/
 	String username();
 	String userSecret();
 	
@@ -36,8 +43,49 @@ public interface APIConfig  extends Config {
 	 *****************************************/
 	String cameraDataXLSFileAbsPath();
 	String camerasDataSourceID();
+	String CamerasDB2Table();
 	
-
+	/*****************************************
+	 * 	Offenders configurations
+	 *****************************************/
+	String OffendersDataSourceId();
+	String OffendersDB2Table();
+	
+	/*****************************************
+	 * 	Events configurations
+	 *****************************************/
+	String EventsDataSourceId();
+	String EventsDB2Table();
+	
+	/*****************************************
+	 * 	Vehicle configurations
+	 *****************************************/
+	String VechileInfoDataSourceId();
+	String VechileInfoDB2Table();
+	
+	/*****************************************
+	 * 	Ambulances configurations
+	 *****************************************/
+	String AmbulancesDataSourceId();
+	String AmbulancesDB2Table();
+	
+	/*****************************************
+	 * 	FireEngines configurations
+	 *****************************************/
+	String FireEnginesDataSourceId();
+	String FireEnginesDB2Table();
+	
+	/*****************************************
+	 * 	CrimeMapping configurations
+	 *****************************************/
+	String CrimeMappingDataSourceId();
+	String CrimeMappingDB2Table();
+	
+	/*****************************************
+	 * 	JRMS configurations
+	 *****************************************/
+	String JRMSDataSourceId();
+	String JRMSDB2Table();
 	
 }
 

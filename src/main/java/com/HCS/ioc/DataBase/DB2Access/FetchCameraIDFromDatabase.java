@@ -32,9 +32,8 @@ public class FetchCameraIDFromDatabase {
 			String cameraIDinCSV = payloadjs.getString("camera_ID").toString();
 			while (resultset.next()) {
 				String CameraIDinDB = resultset.getString("camera_ID");
-				System.out.println(CameraIDinDB);
 				String ObjectID = resultset.getString("OBJECTID");
-				System.out.println(ObjectID);
+				
 				if (cameraIDinCSV.equalsIgnoreCase(CameraIDinDB)) {
 					new UpdateDataSourceRecord();
 					logger.info(UpdateDataSourceRecord.updateDataSource(ObjectID, dataSourcePayload));

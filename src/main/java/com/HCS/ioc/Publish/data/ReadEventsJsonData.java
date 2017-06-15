@@ -14,7 +14,7 @@ public class ReadEventsJsonData {
         JSONObject datasourcePayload = new JSONObject();
         JSONObject alertObj = (JSONObject)payloadObj.get("alert");
         try {            
-            System.out.println(" PAYLOAD FROM ITMS >>---->>> "+payload);
+//            System.out.println(" PAYLOAD FROM ITMS >>---->>> "+payload);
             
 
             datasourcePayload.put("identifier",alertObj.get("identifier"));

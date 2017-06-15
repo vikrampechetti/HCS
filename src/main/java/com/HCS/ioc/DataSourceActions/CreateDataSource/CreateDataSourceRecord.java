@@ -21,6 +21,7 @@ import com.sun.jersey.api.client.WebResource;
 public class CreateDataSourceRecord {
 	static Logger logger = LoggerFactory.getLogger(CreateDataSourceRecord.class);
 	static APIConfig config = ConfigFactory.create(APIConfig.class);
+	
 	URI uri;
 	URI uri_1;
 	Client client = new Client();

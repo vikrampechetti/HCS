@@ -1,5 +1,5 @@
 
-package com.HCS.ioc.fetch.data;
+package com.HCS.ioc.Publish.data;
 
 import java.io.BufferedReader;
 
@@ -24,10 +24,10 @@ import com.HCS.ioc.api.Common.Utilities;
  * @author OohithVikramRao 19-May-2017
  *
  */
-public class ExtractCameraDataFromCSV {
+public class PublishCameraDataFromCSV {
 
 	static APIConfig config = ConfigFactory.create(APIConfig.class);
-	static Logger logger = LoggerFactory.getLogger(ExtractCameraDataFromCSV.class);
+	static Logger logger = LoggerFactory.getLogger(PublishCameraDataFromCSV.class);
 
 	public static void main(String[] args) throws JSONException {
 		run();
@@ -46,7 +46,8 @@ public class ExtractCameraDataFromCSV {
 			String[] jsonKeys = headersLine.split(",");
 			valuesFromSecondLine = bufferreader.readLine();
 
-			String SelectQuery = "SELECT * FROM IOC.TARGET_VIEW_HCS_CAMERA";
+			System.out.println(config.CamerasDB2Table());
+			String SelectQuery = "SELECT * FROM "+config.CamerasDB2Table();
 			PreparedStatement preparedStatement = Utilities.ExecuteSelectQuery(SelectQuery);
 			ResultSet resultset = null;
 

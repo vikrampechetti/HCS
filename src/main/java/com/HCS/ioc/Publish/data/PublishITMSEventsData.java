@@ -1,11 +1,18 @@
-package com.HCS.ioc.Test;
+package com.HCS.ioc.Publish.data;
 
+import org.aeonbits.owner.ConfigFactory;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.HCS.ioc.DataBase.DB2Access.FetchCameraIDFromDatabase;
+import com.HCS.ioc.api.Common.APIConfig;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 
-public class Mashapetest {
+public class PublishITMSEventsData {
+	static Logger logger = LoggerFactory.getLogger(FetchCameraIDFromDatabase.class);
+	static APIConfig config = ConfigFactory.create(APIConfig.class);
 
 	public static void main(String[] args) {
 		String previousJsonString = "";

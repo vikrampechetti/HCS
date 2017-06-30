@@ -28,7 +28,7 @@ public class PublishITMSEventsData {
 						.header("content-type", "application/json").header("cache-control", "no-cache")
 						.header("postman-token", "61cf5499-d06a-01d8-57ca-e67be450d9ee")
 						.body(jsonStringfromGet.toString()).asString();
-				System.out.println(responseToITMS.getStatus() + responseToITMS.getStatusText());
+				logger.info(responseToITMS.getStatus() + responseToITMS.getStatusText());
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

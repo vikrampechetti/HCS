@@ -26,10 +26,9 @@ public class PublishFireEnginesData {
 		
 		JSONArray jsonData=new JSONArray(offendersDataInput);
 		JSONObject payload=new JSONObject(jsonData.get(0).toString());
-		System.out.println(payload);
 		CreateDataSourceRecord createDataSourceRecord=new CreateDataSourceRecord();
 		String response=createDataSourceRecord.createDataSourceRecord(config.FireEnginesDataSourceId(), payload.toString());
-		System.out.println(response);
+		logger.info(response);
 	}
 
 }

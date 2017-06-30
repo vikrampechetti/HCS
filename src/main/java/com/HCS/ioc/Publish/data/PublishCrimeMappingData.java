@@ -41,10 +41,9 @@ public class PublishCrimeMappingData {
 		payload.put("LOCATION", "POINT("+payload.getString("Longitude")+" "+payload.getString("Latitude")+")");
 		payload.put("ADDRESS",payload.getString("Location"));
 		payload.remove("Location");
-		System.out.println(payload);
 		CreateDataSourceRecord dataSourceRecord = new CreateDataSourceRecord();
 		String response = dataSourceRecord.createDataSourceRecord(config.CrimeMappingDataSourceId(), payload.toString());
-		System.out.println(response);
+		logger.info(response);
 	}
 
 }

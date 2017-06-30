@@ -32,10 +32,9 @@ public class PublishJRMSData {
 
 		JSONArray jsonData = new JSONArray(offendersDataInput);
 		JSONObject payload = new JSONObject(jsonData.get(0).toString());
-		System.out.println(payload);
 		CreateDataSourceRecord createDataSourceRecord = new CreateDataSourceRecord();
 		String response = createDataSourceRecord.createDataSourceRecord(config.JRMSDataSourceId(), payload.toString());
-		System.out.println(response);
+		logger.info(response);
 	}
 
 }

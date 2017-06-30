@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.aeonbits.owner.ConfigFactory;
@@ -20,7 +21,7 @@ import com.google.gson.JsonObject;
 public class Utilities {
 	static APIConfig config = ConfigFactory.create(APIConfig.class);
 	static Logger logger = LoggerFactory.getLogger(Utilities.class);
-
+ 
 	/**
 	 * To create Json object for given keys[] and values[]
 	 */
@@ -29,7 +30,7 @@ public class Utilities {
 		try {
 			for (int i = 0; i < jsonValues.length; i++) {
 				for (int j = 0; j < jsonKey.length; j++) {
-					obj.addProperty(jsonKey[i], jsonValues[i]);
+					obj.addProperty(jsonKey[i].trim(), jsonValues[i]);
 				}
 			}
 		} catch (Exception e) {
@@ -37,7 +38,22 @@ public class Utilities {
 		}
 		return obj.toString();
 	}
-
+	/**
+	 *To create Json object for given keys Arraylist and values Arraylist
+	 */
+	public static String createJson(ArrayList<String> keys, ArrayList<String> values) {
+		JsonObject obj = new JsonObject();
+		try {
+			for (int i = 0; i < values.size(); i++) {
+				for (int j = 0; j < keys.size(); j++) {
+					obj.addProperty(keys.get(i), values.get(i));
+				}
+			}
+		} catch (Exception e) {
+			logger.error("Exception @ CreateJson }   " + e);
+		}
+		return obj.toString();
+	}
 	/**
 	 * To get current DATETIME in yyyy-MM-dd HH:mm:ss format
 	 */
@@ -71,12 +87,14 @@ public class Utilities {
 	/**
 	 * To get DataBase Connection
 	 */
-	private static Connection GetDB2Connection() {
-		Connection con = null;
+	public static Connection GetDB2Connection() {
+		Connection con=null;
 		try {
+			
 			Class.forName("com.ibm.db2.jcc.DB2Driver");
 			con = DriverManager.getConnection(config.DB2ConnectionURL(), config.DB2Username(), config.DB2Usersecret());
 			con.setAutoCommit(false);
+			
 		} catch (ClassNotFoundException | SQLException e) {
 			logger.error("Exception @ GetDataBaseConnection }" + e.toString());
 

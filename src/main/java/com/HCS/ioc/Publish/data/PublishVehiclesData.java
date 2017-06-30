@@ -31,10 +31,9 @@ public class PublishVehiclesData {
 		
 		JSONArray jsonData=new JSONArray(offendersDataInput);
 		JSONObject payload=new JSONObject(jsonData.get(0).toString());
-		System.out.println(payload);
 		CreateDataSourceRecord createDataSourceRecord=new CreateDataSourceRecord();
-		String response=createDataSourceRecord.createDataSourceRecord(config.VechileInfoDataSourceId(), payload.toString());
-		System.out.println(response);
+		String response=createDataSourceRecord.createDataSourceRecord(config.VehicleInfoDataSourceId(), payload.toString());
+		logger.info(response);
 	}
 
 }

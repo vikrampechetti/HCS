@@ -153,4 +153,15 @@ public interface APIConfig extends Config {
 	String HospitalsDB2Table();
 
 	String HospitalsRequiredFields();
+
+	/*****************************************
+	 * CCTV configurations
+	 ****************************************/
+	String CCTVDataSourceID();
+
+	String CCTVDataSourceName();
+
+	String CCTVDB2Table();
+
+	String CCTVRequiredFields();
 }
